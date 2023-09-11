@@ -1,0 +1,39 @@
+export const data =[
+         {
+           "vin":"123AJ",
+           "make":"Toyota",
+           "model":"Avelon",
+           "price":"120"     
+        },
+        {
+            "vin":"144AK",
+            "make":"Toyota",
+            "model":"Camry",
+            "price":"140"     
+         },
+         {
+            "vin":"123563AN",
+            "make":"Nissan",
+            "model":"Xtrail",
+            "price":"135"     
+         },
+         {
+            "vin":"999MM",
+            "make":"Nissan",
+            "model":"Pajero",
+            "price":"180"     
+         },
+         {
+            "vin":"7865JJ",
+            "make":"Audi",
+            "model":"New Xl",
+            "price":"130"     
+         },
+         {
+            "vin":"888JH",
+            "make":"Holden",
+            "model":"Astra",
+            "price":"130"     
+         }
+
+    ]
