@@ -1,0 +1,33 @@
+<app-car-search-header></app-car-search-header>
+<div class="container">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+        <label for="vin" class="form-label">Vin Number </label>
+        <input id="vin" class="form-control" type="text" formControlName="vin" placeholder="Select Vin..." >
+    </div>
+    
+    <div class="mb-3">
+        <label for="make" class="form-label">Make of Vehicle </label>
+        <input id="make" class="form-control" type="text" formControlName="make" placeholder="Select Make...">
+    </div>
+
+    <div class="mb-3">
+        <label for="model" class="form-label">Model of Vehicle </label>
+        <input id="model" class="form-control" type="text" formControlName="model" placeholder="Select Model...">
+    </div>
+
+    <div class="mb-3">
+        <label for="price" class="form-label">Price of Vehicle in $ </label>
+        <input id="price" class="form-control" type="text" formControlName="price" placeholder="Select Price...">
+    </div>
+
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date </label>
+        <input id="startDate" class="form-control" type="date" formControlName="startDate" placeholder="Select Start Date..." required>
+            <div  *ngIf="rFormControls.startDate.touched && rFormControls.startDate.invalid">
+                <small class="text-danger" *ngIf="rFormControls.startDate.errors?.['required']">
+                    Start Date is required.
+                </small>
+            </div>
+    </div>
