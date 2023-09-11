@@ -31,3 +31,54 @@
                 </small>
             </div>
     </div>
+          
+    <div class="mb-3">
+        <label for="endDate" class="form-label">End Date </label>
+        <input id="endDate" class="form-control" type="date" formControlName="endDate" placeholder="Select End Date..." required>
+        <div  *ngIf="rFormControls.endDate.touched && rFormControls.endDate.invalid">
+            <small class="text-danger" *ngIf="rFormControls.endDate.errors?.['required']">
+                End Date is required.
+            </small>
+        </div>
+    </div>
+
+    <p class="mb-3">Complete the form to enable button.</p>
+    <div>
+        <button type="submit" class="mb-3 btn btn-primary" [disabled]="!searchForm.valid">Submit</button>
+  
+    </div>    
+  
+    </form>
+    <diV>
+        <p class="mb-3">For Booking, Enter Vin/Start/End date to do booking, press Booking.</p>
+        <p class="mb-3">To check Car Available for booking, Press Available for booking.</p>
+        <button class="mb-3 btn btn-primary" (click)="getAllVehicles()">Get All Vehicles</button>
+        <button class="ms-3 mb-3 btn btn-primary" (click)="getBooking()">Booking</button>
+        <button class="ms-3 mb-3 btn btn-primary" (click)="getAllBooking()">Available for booking</button>
+    </diV>
+    <ng-container *ngIf="errorMessage ==''">
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+        <tr>
+         <th scope="col">Vin</th>
+         <th scope="col">Make</th>
+         <th scope="col">Model</th>
+         <th scope="col">Price in A$</th>
+        </tr>
+        </thead>
+        <tbody>
+         <ng-container *ngFor="let veh of vehicleData$ | async; let i = index">
+         <tr>
+          <td> {{veh.vin}} </td>  
+          <td> {{veh.make}} </td>
+          <td>{{veh.model}} </td>
+          <td> {{veh.price}} </td>
+         </tr>
+        </ng-container>
+        </tbody>
+    </table>
+    </ng-container>
+    <ng-container *ngIf="errorMessage !== ''">
+         <h3>Error in fetching records {{errorMessage}} </h3>
+    </ng-container>
+</div>
