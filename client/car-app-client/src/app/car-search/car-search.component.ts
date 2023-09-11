@@ -24,7 +24,6 @@ export class CarSearchComponent {
     startDate:['', Validators.required],
     endDate:['', Validators.required]
   });
-
   get rFormControls() { return this.searchForm.controls};
 
   onSubmit() {
