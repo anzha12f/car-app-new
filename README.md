@@ -15,6 +15,8 @@ Project has two folder `Client` and `Server`
 
     There are other feature but its not activated because of time constraints
 
+    first npm install
+
     To activate angular app from client-car-app, `npm start` 
 
 `Server` Nest code as follows:
@@ -29,6 +31,7 @@ Project has two folder `Client` and `Server`
      -- get one vehicle get http://localhost:3000/car/:vin 
      -- I think same for booking 
 
+     npm install
      to active from cars-api, npm run start 
 
      
